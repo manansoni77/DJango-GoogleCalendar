@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            List of Calendar Events
+        </title>
+    </head>
+    <body>
+        <h1>Calendar Events - </h1>
+        {% if events|length == 0 %}
+        <p>
+            There are no events to List!
+        </p>
+        {% else %}
+        <ul>
+            {% for event in events %}
+            <li>
+                {{event.start}} -> {{event.summary}}
+            </li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </body>
+</html>
